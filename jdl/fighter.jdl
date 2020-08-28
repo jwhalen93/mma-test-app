@@ -8,3 +8,38 @@ entity Fighter {
     draw Integer,
     noContest Integer
 }
+
+entity Match {
+	outcome Outcome,
+    roundEnd Integer,
+    roundTotal Integer,
+    timeEnd Integer,
+    title Boolean,
+    winner Winner,
+    order Integer
+}
+
+entity Card {
+	title String
+}
+
+enum Outcome {
+	Dcsn_Major, Dcsn_Unan, Dcsn_Split, Major_Draw, Split_Draw, Unan_Draw KO, TKO, Sub, DQ, Other
+}
+
+enum Winner {
+	Red, Blue
+}
+
+relationship OneToOne {
+	Match{fighterBlue} to Fighter
+    Match{fighterRed} to Fighter
+}
+
+relationship OneToMany {
+    Card{matches} to Match{card}
+}
+
+
+dto all with mapstruct
+service all with serviceClass
