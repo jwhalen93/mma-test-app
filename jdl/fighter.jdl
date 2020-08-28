@@ -8,3 +8,6 @@ entity Fighter {
     draw Integer,
     noContest Integer
 }
+
+dto all with mapstruct
+service all with serviceClass
