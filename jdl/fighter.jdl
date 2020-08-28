@@ -1,0 +1,10 @@
+entity Fighter {
+	firstName String,
+    lastName String,
+    weight Double,
+    height Double,
+    win Integer,
+    loss Integer,
+    draw Integer,
+    noContest Integer
+}
